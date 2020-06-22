@@ -1,19 +1,27 @@
-name: Publish Site
+name: Publish GitHub Pages
 
 on:
   push:
     branches:
-      - master
+    - master
 
 jobs:
   build-deploy:
-    runs-on: ubuntu-latest
-
+    runs-on: ubuntu-18.04
     steps:
-      - name: Checkout Repo
-        uses: actions/checkout@master
+    - uses: actions/checkout@master
 
-      - name: Publish Site
-        uses: chabad360/hugo-gh-pages@master
-        with:
-          githubToken: ${{ secrets.DEVOPS_TOKEN }}
+    - name: Setup Hugo
+      uses: peaceiris/actions-hugo@v2.2.0
+      with:
+        hugo-version: '0.58.3'
+
+    - name: Build
+      run: hugo
+
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v2.4.0
+      env:
+        ACTIONS_DEPLOY_KEY: ${{ secrets.DEVOPS_TOKEN }}
+        PUBLISH_BRANCH: gh-pages
+        PUBLISH_DIR: ./docs
