@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projekt Facelift</title>
+    <link>https://chatclass.github.io/projekt-facelift-frontend/</link>
+    <description>Recent content on Projekt Facelift</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de-DE</language>
+    
+	<atom:link href="https://chatclass.github.io/projekt-facelift-frontend/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+  </channel>
+</rss>
