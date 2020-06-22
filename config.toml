@@ -1,0 +1,5 @@
+baseURL = "https://chatclass.github.io/projekt-facelift-frontend/"
+languageCode = "de-DE"
+title = "Projekt Facelift"
+theme = "projekt-facelift"
+publishDir = "docs"
