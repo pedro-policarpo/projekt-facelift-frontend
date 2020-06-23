@@ -10,7 +10,8 @@
 	<meta name="description" content="{{ . }}">{{ end }}
 	{{ with .Site.Params.author }}
 	<meta name="author" content="{{ . }}">{{ end }}
-	<link rel="stylesheet" href="{{ "css/css.css" | relURL }}">
+	{{ $style := resources.Get "/sass/main.scss" | toCSS | minify | fingerprint }}
+	<link rel="stylesheet" href="{{ $style.RelPermalink }}">
 	{{ with .OutputFormats.Get "RSS" -}}
 	{{ printf `<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .RelPermalink $.Site.Title | safeHTML }}
 	{{- end }}
@@ -20,6 +21,12 @@
 	{{ partial "header" . }}
 	{{ block "main" . }}{{ end }}
 	{{ partial "footer" . }}
+
+	<!-- Concatenate and minify js assets -->
+	{{ $jquery := resources.Get "js/vendor/jquery.min.js" }}
+	{{ $bootstrap := resources.Get "js/vendor/bootstrap.min.js" }}
+	{{ $js := slice $jquery $bootstrap | resources.Concat "js/bundle.js" | resources.Minify }}
+	<script src="{{$js.RelPermalink}}"></script>
 </body>
 
 </html>
