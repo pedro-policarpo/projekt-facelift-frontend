@@ -8,6 +8,11 @@ on:
 jobs:
   build-deploy:
     runs-on: ubuntu-18.04
+    
+    strategy:
+      matrix:
+        node-version: [8.x, 10.x, 12.x]
+    
     steps:
     - uses: actions/checkout@master
 
@@ -16,6 +21,13 @@ jobs:
       with:
         hugo-version: '0.58.3'
 
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm install
+    - run: make
+      
     - name: Build
       run: hugo
 
