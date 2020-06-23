@@ -1,1 +1,4 @@
 docs/
+vendor/
+resources/
+/node_modules

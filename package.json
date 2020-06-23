@@ -1,0 +1,23 @@
+{
+  "name": "chatclass",
+  "version": "1.0.0",
+  "description": "## How to run",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chatclass/projekt-facelift-frontend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chatclass/projekt-facelift-frontend/issues"
+  },
+  "homepage": "https://github.com/chatclass/projekt-facelift-frontend#readme",
+  "dependencies": {
+    "bootstrap": "^4.5.0",
+    "jquery": "^3.5.1"
+  }
+}
