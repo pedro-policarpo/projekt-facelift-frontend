@@ -12,15 +12,13 @@
 	<meta name="author" content="{{ . }}">{{ end }}
 	{{ $style := resources.Get "/sass/main.scss" | toCSS | minify | fingerprint }}
 	<link rel="stylesheet" href="{{ $style.RelPermalink }}">
-	{{ with .OutputFormats.Get "RSS" -}}
-	{{ printf `<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .RelPermalink $.Site.Title | safeHTML }}
-	{{- end }}
 </head>
 
 <body>
 	{{ partial "header" . }}
-	{{ block "main" . }}{{ end }}
-	{{ partial "footer" . }}
+	<div class="container">
+		{{ block "main" . }}{{ end }}
+	</div>
 
 	<!-- Concatenate and minify js assets -->
 	{{ $jquery := resources.Get "js/vendor/jquery.min.js" }}
