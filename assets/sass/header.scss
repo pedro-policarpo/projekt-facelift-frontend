@@ -38,8 +38,61 @@ header, .navbar {
   width: 19px;
 }
 
+.arrow-back-icon {
+  display: inline-block;
+  background: url("../icons/page-header-arrow.png") center/contain no-repeat;
+  height: 22px;
+  width: 19px;
+}
+
+.settings-icon {
+  display: inline-block;
+  background: url("../icons/page-header-settings.png") center/contain no-repeat;
+  height: 22px;
+  width: 19px;
+}
+
 .page-header {
   height: 162px;
   background: linear-gradient(179.18deg, #FFB640 0%, #FF8A07 100%);
+  position: relative;
+
+  .page-header-button {
+    font-weight: 500;
+    font-size: 18px;
+    position: absolute;
+    top: 30px;
+    color: #fff;
+
+    span {
+      margin: 0 5px;
+    }
+
+    span, i {
+      vertical-align: middle;
+    }
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    &.back {
+      left: 20px;
+    }
+
+    &.settings {
+      right: 20px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      &.back {
+        left: 120px;
+      }
+
+      &.settings {
+        right: 120px;
+      }
+    }
+  }
 }
 
