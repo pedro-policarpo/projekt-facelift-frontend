@@ -3,11 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://chatclass.github.io/projekt-facelift-frontend/categories/</loc>
+    <loc>https://chatclass.github.io/projekt-facelift-frontend/classroom/</loc>
+    <lastmod>2020-06-24T18:48:43+03:00</lastmod>
   </url>
   
   <url>
     <loc>https://chatclass.github.io/projekt-facelift-frontend/</loc>
+    <lastmod>2020-06-24T18:48:43+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatclass.github.io/projekt-facelift-frontend/classroom/student/</loc>
+    <lastmod>2020-06-24T18:48:43+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chatclass.github.io/projekt-facelift-frontend/categories/</loc>
   </url>
   
   <url>
