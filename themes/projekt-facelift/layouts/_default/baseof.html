@@ -16,9 +16,7 @@
 
 <body>
 	{{ partial "header" . }}
-	<div class="container">
-		{{ block "main" . }}{{ end }}
-	</div>
+	{{ block "main" . }}{{ end }}
 
 	<!-- Concatenate and minify js assets -->
 	{{ $jquery := resources.Get "js/vendor/jquery.min.js" }}
