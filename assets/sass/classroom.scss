@@ -11,9 +11,7 @@
   .student-info {
     position: absolute;
     margin-top: -30px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+    @include flex-row(flex-start, center);
 
     .avatar-container {
       width: 144px;
@@ -43,10 +41,7 @@
     border-radius: 27px;
     padding: 0 20px;
 
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
+    @include flex-row(space-around, center);
 
     .count {
       font-size: 35px;
@@ -60,12 +55,9 @@
 }
 
 .student-achievement {
-  display: flex;
-  flex-direction: row;
-  background-color: #fff;
-  box-shadow: 0px 3px 7px rgba(0, 0, 0, .1);
-  padding: 20px;
+  @include flex-row;
   margin-bottom: 20px;
+  @include card;
 
   .icon {
     font-size: 40px;
@@ -85,6 +77,33 @@
 
     @include media-breakpoint-down(md) {
       margin-left: -60px;
+    }
+  }
+}
+
+.student-info-card {
+  @include card;
+  @include flex-row(space-between, center);
+  margin-bottom: 35px;
+  min-height: 130px;
+  font-size: 20px;
+
+  .message {
+    color: #999;
+  }
+
+  .right {
+    strong {
+      margin: 0 20px;
+    }
+
+    span {
+      vertical-align: middle;
+    }
+
+    .refresh {
+      @include img-icon("refresh.png", 26px, 26px);
+      vertical-align: middle;
     }
   }
 }
