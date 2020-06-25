@@ -31,3 +31,15 @@ header, .navbar {
   }
 }
 
+.user-account-icon {
+  display: inline-block;
+  background: url("../icons/account-icon.png") center/contain no-repeat;
+  height: 22px;
+  width: 19px;
+}
+
+.page-header {
+  height: 162px;
+  background: linear-gradient(179.18deg, #FFB640 0%, #FF8A07 100%);
+}
+
